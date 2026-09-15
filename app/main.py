@@ -4,12 +4,15 @@ import sys
 def main():
     while True:
         sys.stdout.write("$ ")
-
         command = input()
+
+        # Commands 
         if command == "exit".lower():
             break
-
-        print(f"{command}: command not found")
+        if command.startswith("echo "):
+            print(command[5:])
+        else:
+            print(f"{command}: command not found")
 
         
 
